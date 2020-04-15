@@ -1,0 +1,15 @@
+version: '3'
+services:
+  deluge:
+    container_name: deluge
+    image: linuxserver/deluge
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+#      - /storage/media/Video:/downloads
+#      - /storage/media/Torrents:/torrents
+#      - /storage/media/.incompleted:/incompleted
+      - ./.deluge/config:/config
+    network_mode: host
