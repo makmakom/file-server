@@ -12,5 +12,6 @@ sudo docker-compose up --build -d
 In the plans:
 * Samba
 * FTP 
-* some Cloud
+* Some Cloud
 * Telegramer https://github.com/noam09/deluge-telegramer
+* Torrent Monitor https://github.com/nawa/torrentmonitor-dockerized
