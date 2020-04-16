@@ -1,5 +1,8 @@
 version: '3'
 services:
+
+  ################
+  # Torrent server
   deluge:
     container_name: deluge
     image: linuxserver/deluge
@@ -8,8 +11,26 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-#      - /storage/media/Video:/downloads
-#      - /storage/media/Torrents:/torrents
-#      - /storage/media/.incompleted:/incompleted
+      - ./storage:/storage
       - ./.deluge/config:/config
     network_mode: host
+
+  ##############
+  # Samba server
+  samba:
+    container_name: samba
+    hostname: samba
+    image: sixeyed/samba
+    volumes:
+      - ./storage:/mnt/storage
+    ports:
+      - "139:139"
+      - "446:445"
+      - "137:137/udp"
+      - "138:138/udp"
+    command: samba.sh -s "storage;/mnt/storage;yes;no;yes;all"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    restart: always

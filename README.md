@@ -1,16 +1,19 @@
 # Home File Server
-Torent - Deluge. 
+### Torent - Deluge. 
+Available at http://{host}:8112
 
-Available at http://localhost:8112
+Image used - https://registry.hub.docker.com/r/linuxserver/deluge
 
-Used image - https://registry.hub.docker.com/r/linuxserver/deluge
+### Samba
+Available at smb://{host}/storage
 
-First run:
- ```shell script
+Image used - https://hub.docker.com/r/sixeyed/samba/
+##
+### First run:
+```shell script
 sudo docker-compose up --build -d
 ```
-In the plans:
-* Samba
+## In the plans:
 * FTP 
 * Some Cloud
 * Telegramer https://github.com/noam09/deluge-telegramer
