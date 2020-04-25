@@ -11,8 +11,11 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ./storage:/storage
       - ./.deluge/config:/config
+      - ./storage/done/:/storage/done/
+      - ./storage/todo/:/storage/todo/
+      - ./storage/progress/:/storage/progress/
+      - ./storage/torrents/:/storage/torrents/
     network_mode: host
 
   ##############
@@ -22,7 +25,7 @@ services:
     hostname: samba
     image: sixeyed/samba
     volumes:
-      - ./storage:/mnt/storage
+      - ./storage/:/mnt/storage/
     ports:
       - "139:139"
       - "446:445"
