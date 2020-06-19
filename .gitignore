@@ -1,4 +1,10 @@
-.idea/
-.env
 .deluge/config/
 !.deluge/config/.gitkeep
+.env
+.idea/
+/storage/
+!/storage/done/.gitkeep
+!/storage/progress/.gitkeep
+!/storage/todo/.gitkeep
+!/storage/torrents/.gitkeep
+!/storage/.gitkeep
