@@ -8,3 +8,5 @@
 !/storage/todo/.gitkeep
 !/storage/torrents/.gitkeep
 !/storage/.gitkeep
+/.nextcloud/
+/.database/

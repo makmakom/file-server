@@ -37,3 +37,31 @@ services:
         limits:
           memory: 1G
     restart: always
+
+  ###############
+  # MariaDB
+  nextcloud-db:
+    image: mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.database/nextcloud/mariadb/:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+
+  ###############
+  # NextCloud
+  nextcloud-app:
+    image: nextcloud
+    ports:
+      - 8080:80
+    links:
+      - nextcloud-db
+    volumes:
+      - ./.nextcloud/:/var/www/html
+    restart: always
