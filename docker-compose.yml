@@ -37,3 +37,23 @@ services:
         limits:
           memory: 1G
     restart: always
+
+  ################
+  # Plex media server
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+      - UMASK_SET=022 #optional
+      - PLEX_CLAIM= #optional
+    volumes:
+      - ./.plex:/config
+#      - /path/to/tvseries:/tv
+#      - /path/to/movies:/movies
+      - ./storage/done/_Video/TVShows:/tv
+      - ./storage/done/_Video/Films:/movies
+    restart: unless-stopped
