@@ -52,8 +52,6 @@ services:
       - PLEX_CLAIM= #optional
     volumes:
       - ./.plex:/config
-#      - /path/to/tvseries:/tv
-#      - /path/to/movies:/movies
-      - ./storage/done/_Video/TVShows:/tv
-      - ./storage/done/_Video/Films:/movies
+      - ./storage/done/_Music:/music
+      - ./storage/done/_Video:/video
     restart: unless-stopped

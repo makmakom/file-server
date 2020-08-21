@@ -8,6 +8,12 @@ Image used - https://registry.hub.docker.com/r/linuxserver/deluge
 Available at smb://{host}/storage
 
 Image used - https://hub.docker.com/r/sixeyed/samba/
+
+### Plex Media Server
+Available at http://{host}:32400/web
+
+Image used - https://hub.docker.com/r/linuxserver/plex/
+
 ##
 ### First run:
 ```shell script
