@@ -2,6 +2,7 @@
 .idea/
 .deluge/config/
 !.deluge/config/.gitkeep
+.samba/
 storage/
 !storage/.gitkeep
 !storage/done/.gitkeep

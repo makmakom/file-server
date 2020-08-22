@@ -26,7 +26,7 @@ services:
     image: sixeyed/samba
     volumes:
       - ./storage/:/mnt/storage/
-      - ./.samba/smb.conf:/etc/samba/smb.conf
+      - ./.samba/:/etc/samba/
     ports:
       - "139:139"
       - "446:445"
