@@ -56,3 +56,20 @@ services:
       - ./storage/done/_Music:/music
       - ./storage/done/_Video:/video
     restart: unless-stopped
+
+  ##################
+  # Calibre library
+  calibre:
+    image: linuxserver/calibre
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Kiev
+    volumes:
+      - ./.calibre:/config
+      - ./storage/calibreLibrary:/config/CalibreLibrary
+    ports:
+      - 8080:8080
+      - 8081:8081
+    restart: unless-stopped
