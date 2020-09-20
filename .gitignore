@@ -1,7 +1,6 @@
 .env
 .idea/
-.deluge/config/
-!.deluge/config/.gitkeep
+.deluge/
 .samba/
 storage/
 !storage/.gitkeep
@@ -9,7 +8,8 @@ storage/
 !storage/progress/.gitkeep
 !storage/todo/.gitkeep
 !storage/torrents/.gitkeep
+!storage/calibreLibrary/.gitkeep
 .nextcloud/
 .database/
 .plex/
-!.plex/.gitkeep
+.calibre/
